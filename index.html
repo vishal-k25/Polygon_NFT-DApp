@@ -116,13 +116,14 @@
             async function TransferNFT(_tokenId){
                 var toAddress = document.getElementById("toAddress").value;
                 var tokenId = document.getElementById("tokenId").value;
-                await myContract.methods.transferFrom(accounts[0], toAddress, tokenId).send({from: accounts[0]}, function(err, res){
+                await myContract.methods.transferFrom(account[0], toAddress, tokenId).send({from: accounts[0]}, function(err, res){
                     if(!err){
                         console.log(res);
                     }else{
                         console.log(err);
-                    }
+                    } 
                 })
+        
             }
 
             function httpGet(theUrl){
